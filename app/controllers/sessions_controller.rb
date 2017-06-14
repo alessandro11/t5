@@ -3,7 +3,14 @@ class SessionsController < ApplicationController
   end
 
   def create
-    render 'new'
+    user = User.find_by(user: params[:session][:user])
+    if user && user.authenticate(params[:session][:password])
+      log_in user
+      redirect_to user
+    else
+      flash.now[:danger] = 'Invalid user/password'
+      render 'new'
+    end
   end
 
   def destroy
