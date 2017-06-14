@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :people
+  resources :professions
   root 'sessions#new'
   get 'sessions/new'
   get '/login', to: 'sessions#new'
