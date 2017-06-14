@@ -13,3 +13,43 @@
  *= require_tree .
  *= require_self
  */
+
+body, html {
+	height: 100%;
+}
+
+.center {
+    margin: auto;
+    width: 100%;
+    padding: 10px;
+}
+
+header {
+    padding: 1em;
+    color: green;
+    background-color: black;
+    clear: left;
+    text-align: center;
+}
+
+footer {
+    color: green;
+    background-color: black;
+    clear: left;
+    text-align: center;
+	margin-top: -50px;
+	height: 50px;
+	width: auto;
+}
+
+div.container {
+	min-height: 100%;
+	height: auto;
+	position: relative;
+	width: 100%;
+	margin: 0; padding: 0;
+}
+
+#log-in {
+	margin-top: 10px;
+}

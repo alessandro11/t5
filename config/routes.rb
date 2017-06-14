@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+  root 'sessions#new'
+  get 'sessions/new'
+  get '/login', to: 'sessions#new'
+  post '/login', to: 'sessions#create'
+  delete '/login', to: 'sessions#destroy'
   get 'users/new'
 
   # The priority is based upon order of creation: first created -> highest priority.
