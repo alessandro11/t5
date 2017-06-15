@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :house_people
   resources :houses
   resources :shoes
   resources :people

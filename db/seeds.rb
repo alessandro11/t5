@@ -17,5 +17,12 @@ pr = Profession.create({:name => 'pr1', :place => 'pl1', :person_id => p1[:id]})
 Shoe.create({:brand => 'b1', :size => '1', :person_id => p1[:id]})
 Shoe.create({:brand => 'b2', :size => '2', :person_id => p1[:id]})
 
-House.create({:tenant => 'n1', :room => '1'})
-House.create({:tenant => 'n2', :room => '1'})
+h1 = House.create({:tenant => 'n1', :room => '1'})
+h2 = House.create({:tenant => 'n2', :room => '1'})
+
+#HousesPeople.create({:house_id => h1[:id], :person_id => p1[:id]})
+#HousesPerson.create({:house_id => h1[:id], :person_id => p2[:id]})
+
+#HousesPerson.create({:house_id => h2[:id], :person_id => p3[:id]})
+#HousesPerson.create({:house_id => h2[:id], :person_id => p4[:id]})
+#HousesPerson.create({:house_id => h2[:id], :person_id => p5[:id]})
