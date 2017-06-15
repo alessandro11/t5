@@ -1,0 +1,26 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Houses People</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>House</th>
+      <th>Person</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @houses_people.each do |houses_person| %>
+      <tr>
+        <td><%= houses_person.house %></td>
+        <td><%= houses_person.person %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Houses people', new_houses_person_path %>

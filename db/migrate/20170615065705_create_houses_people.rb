@@ -1,10 +1,8 @@
-class CreateHousePeople < ActiveRecord::Migration
+class CreateHousesPeople < ActiveRecord::Migration
   def change
-    create_table :house_people do |t|
+    create_table :houses_people, id: false do |t|
       t.references :house, index: true, foreign_key: true
       t.references :person, index: true, foreign_key: true
-
-      t.timestamps null: false
     end
   end
 end

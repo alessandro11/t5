@@ -11,17 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170615054140) do
-
-  create_table "house_people", force: :cascade do |t|
-    t.integer  "house_id"
-    t.integer  "person_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  add_index "house_people", ["house_id"], name: "index_house_people_on_house_id"
-  add_index "house_people", ["person_id"], name: "index_house_people_on_person_id"
+ActiveRecord::Schema.define(version: 20170615065705) do
 
   create_table "houses", force: :cascade do |t|
     t.string   "tenant"
@@ -29,6 +19,14 @@ ActiveRecord::Schema.define(version: 20170615054140) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
+  create_table "houses_people", id: false, force: :cascade do |t|
+    t.integer "house_id"
+    t.integer "person_id"
+  end
+
+  add_index "houses_people", ["house_id"], name: "index_houses_people_on_house_id"
+  add_index "houses_people", ["person_id"], name: "index_houses_people_on_person_id"
 
   create_table "people", force: :cascade do |t|
     t.string   "last_name"
