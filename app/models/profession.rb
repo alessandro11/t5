@@ -1,3 +1,3 @@
 class Profession < ActiveRecord::Base
-  has_one :person
+  belongs_to :person
 end

@@ -7,6 +7,7 @@
     <tr>
       <th>Name</th>
       <th>Place</th>
+      <th>Person</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -16,6 +17,7 @@
       <tr>
         <td><%= profession.name %></td>
         <td><%= profession.place %></td>
+        <td><%= profession.person %></td>
         <td><%= link_to 'Show', profession %></td>
         <td><%= link_to 'Edit', edit_profession_path(profession) %></td>
         <td><%= link_to 'Destroy', profession, method: :delete, data: { confirm: 'Are you sure?' } %></td>

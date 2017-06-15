@@ -1,11 +1,11 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  manufacturer: MyString
+  brand: MyString
   size: 1
   person_id: 
 
 two:
-  manufacturer: MyString
+  brand: MyString
   size: 1
   person_id: 

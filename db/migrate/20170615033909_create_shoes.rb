@@ -1,7 +1,7 @@
 class CreateShoes < ActiveRecord::Migration
   def change
     create_table :shoes do |t|
-      t.string :manufacturer
+      t.string :brand
       t.integer :size
       t.references :person, index: true, foreign_key: true
 

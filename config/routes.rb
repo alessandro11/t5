@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :houses
+  resources :shoes
   resources :people
   resources :professions
   root 'sessions#new'

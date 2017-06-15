@@ -11,26 +11,48 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170614164941) do
+ActiveRecord::Schema.define(version: 20170615041027) do
+
+  create_table "houses", force: :cascade do |t|
+    t.string   "tenant"
+    t.integer  "room"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "houses_people", id: false, force: :cascade do |t|
+    t.integer "house_id",  null: false
+    t.integer "person_id", null: false
+  end
 
   create_table "people", force: :cascade do |t|
     t.string   "last_name"
     t.string   "first_name"
     t.string   "address"
     t.string   "city"
-    t.integer  "profession_id"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
-
-  add_index "people", ["profession_id"], name: "index_people_on_profession_id"
 
   create_table "professions", force: :cascade do |t|
     t.string   "name"
     t.string   "place"
+    t.integer  "person_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
+  add_index "professions", ["person_id"], name: "index_professions_on_person_id"
+
+  create_table "shoes", force: :cascade do |t|
+    t.string   "brand"
+    t.integer  "size"
+    t.integer  "person_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "shoes", ["person_id"], name: "index_shoes_on_person_id"
 
   create_table "users", force: :cascade do |t|
     t.string   "user"

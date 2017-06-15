@@ -18,7 +18,7 @@ class ShoesControllerTest < ActionController::TestCase
 
   test "should create shoe" do
     assert_difference('Shoe.count') do
-      post :create, shoe: { manufacturer: @shoe.manufacturer, person_id: @shoe.person_id, size: @shoe.size }
+      post :create, shoe: { brand: @shoe.brand, person_id: @shoe.person_id, size: @shoe.size }
     end
 
     assert_redirected_to shoe_path(assigns(:shoe))
@@ -35,7 +35,7 @@ class ShoesControllerTest < ActionController::TestCase
   end
 
   test "should update shoe" do
-    patch :update, id: @shoe, shoe: { manufacturer: @shoe.manufacturer, person_id: @shoe.person_id, size: @shoe.size }
+    patch :update, id: @shoe, shoe: { brand: @shoe.brand, person_id: @shoe.person_id, size: @shoe.size }
     assert_redirected_to shoe_path(assigns(:shoe))
   end
 

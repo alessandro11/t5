@@ -5,7 +5,7 @@
 <table>
   <thead>
     <tr>
-      <th>Manufacturer</th>
+      <th>Brand</th>
       <th>Size</th>
       <th>Person</th>
       <th colspan="3"></th>
@@ -15,7 +15,7 @@
   <tbody>
     <% @shoes.each do |shoe| %>
       <tr>
-        <td><%= shoe.manufacturer %></td>
+        <td><%= shoe.brand %></td>
         <td><%= shoe.size %></td>
         <td><%= shoe.person %></td>
         <td><%= link_to 'Show', shoe %></td>

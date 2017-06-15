@@ -18,7 +18,7 @@ class ProfessionsControllerTest < ActionController::TestCase
 
   test "should create profession" do
     assert_difference('Profession.count') do
-      post :create, profession: { name: @profession.name, place: @profession.place }
+      post :create, profession: { name: @profession.name, person_id: @profession.person_id, place: @profession.place }
     end
 
     assert_redirected_to profession_path(assigns(:profession))
@@ -35,7 +35,7 @@ class ProfessionsControllerTest < ActionController::TestCase
   end
 
   test "should update profession" do
-    patch :update, id: @profession, profession: { name: @profession.name, place: @profession.place }
+    patch :update, id: @profession, profession: { name: @profession.name, person_id: @profession.person_id, place: @profession.place }
     assert_redirected_to profession_path(assigns(:profession))
   end
 
