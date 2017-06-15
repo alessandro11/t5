@@ -19,8 +19,11 @@
         <td><%= shoe.size %></td>
         <td><%= shoe.person %></td>
         <td><%= link_to 'Show', shoe %></td>
-        <td><%= link_to 'Edit', edit_shoe_path(shoe) %></td>
-        <td><%= link_to 'Destroy', shoe, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+
+        <% if get_permission %>
+          <td><%= link_to 'Edit', edit_shoe_path(shoe) %></td>
+          <td><%= link_to 'Destroy', shoe, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>
@@ -28,4 +31,7 @@
 
 <br>
 
-<%= link_to 'New Shoe', new_shoe_path %>
+
+<% if get_permission %>
+  <%= link_to 'New Shoe', new_shoe_path %>
+<% end %>

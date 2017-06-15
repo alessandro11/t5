@@ -14,7 +14,22 @@
       </div>
     </div>
 
-    <% flash.each do |name, msg| -%>
+		<header class="navbar navbar-inverse">
+			<div class="container">
+				<nav>
+					<ul class="nav navbar-nav navbar-right">
+						<li><%= link_to "People", 			people_path %></li>
+						<li><%= link_to "Professions", 	professions_path %></li>
+						<li><%= link_to "Shoes",				shoes_path %></li>
+						<li><%= link_to "Houses",   		houses_path %></li>
+						<li><%= link_to "Houses & People", houses_people_path %></li>
+						<li><%= link_to "Log out", logout_path, method: :delete %></li>
+					</ul>
+				</nav>
+			</div>
+		</header>
+
+		<% flash.each do |name, msg| -%>
        <%= content_tag :div, msg, class: "alert alert-#{name}" %>
     <% end -%>
 

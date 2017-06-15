@@ -19,8 +19,10 @@
         <td><%= profession.place %></td>
         <td><%= profession.person %></td>
         <td><%= link_to 'Show', profession %></td>
-        <td><%= link_to 'Edit', edit_profession_path(profession) %></td>
-        <td><%= link_to 'Destroy', profession, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% if get_permission %>
+          <td><%= link_to 'Edit', edit_profession_path(profession) %></td>
+          <td><%= link_to 'Destroy', profession, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>
@@ -28,4 +30,6 @@
 
 <br>
 
-<%= link_to 'New Profession', new_profession_path %>
+<% if get_permission %>
+  <%= link_to 'New Profession', new_profession_path %>
+<% end %>

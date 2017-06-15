@@ -15,5 +15,8 @@
   <%= @profession.person %>
 </p>
 
-<%= link_to 'Edit', edit_profession_path(@profession) %> |
+
+<% if get_permission %>
+  <%= link_to 'Edit', edit_profession_path(@profession) %> |
+<% end %>
 <%= link_to 'Back', professions_path %>

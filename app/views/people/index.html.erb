@@ -2,7 +2,7 @@
 
 <h1>Listing People</h1>
 
-<table>
+<table class="table">
   <thead>
     <tr>
       <th>Last name</th>
@@ -21,8 +21,11 @@
         <td><%= person.address %></td>
         <td><%= person.city %></td>
         <td><%= link_to 'Show', person %></td>
-        <td><%= link_to 'Edit', edit_person_path(person) %></td>
-        <td><%= link_to 'Destroy', person, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% if get_permission %>
+           <td><%= link_to 'Edit', edit_person_path(person) %></td>
+           <td><%= link_to 'Destroy', person, method: :delete, data:
+                   {confirm: 'Are you sure?' } %></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>
@@ -30,4 +33,7 @@
 
 <br>
 
-<%= link_to 'New Person', new_person_path %>
+<% if get_permission %>
+  <%= link_to 'New Person', new_person_path,
+    { :class=>"btn btn-primary" } %>
+<% end %>

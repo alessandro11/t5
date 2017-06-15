@@ -20,5 +20,8 @@
   <%= @person.city %>
 </p>
 
-<%= link_to 'Edit', edit_person_path(@person) %> |
+<% if get_permission %>
+  <%= link_to 'Edit', edit_person_path(@person) %> |
+<% end %>
+
 <%= link_to 'Back', people_path %>
