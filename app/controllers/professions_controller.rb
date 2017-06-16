@@ -4,7 +4,15 @@ class ProfessionsController < ApplicationController
   # GET /professions
   # GET /professions.json
   def index
-    @professions = Profession.all
+    if params[:nome].present?
+      @professions = Profession.find_by_person_id(params[:nome])
+      respond_to do |format|
+        format.html # index.html.erb
+        format.js
+      end      
+    else
+      @professions = Profession.all
+    end
   end
 
   # GET /professions/1

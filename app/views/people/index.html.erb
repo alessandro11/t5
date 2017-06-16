@@ -36,3 +36,22 @@
 <% if get_permission %>
   <%= link_to 'New Person', new_person_path %>
 <% end %>
+<br>
+
+<%= form_tag(professions_path, { :method => :get, :remote => true }) do %>
+    <fieldset>
+        <legend>Procurar profissao</legend>
+        <div class="field">
+            Nome:<br />
+            <%= text_field_tag :nome %>
+        </div>
+        <div class="actions">
+            <%= submit_tag "Procurar" %>
+        </div>
+    </fieldset>
+<% end %>
+
+<div id="ajax_load">
+  <%= render 'tab_professions' %>.
+</div>
+
