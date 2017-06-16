@@ -1,5 +1,22 @@
 <h1>New Houses Person</h1>
 
-<%= render 'form' %>
+<form action="/houses_people" accept-charset="UTF-8" method="post">
+	<input name="utf8" type="hidden" value="&#x2713;" />
+	<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>" />
 
-<%= link_to 'Back', houses_people_index_path %>
+  <div class="field">
+    <label for="house_id">House</label><br>
+    <input type="text" name="houses_person[house_id]" id="house_id" />
+  </div>
+  <div class="field">
+    <label for="person_id">Person</label><br>
+    <input type="text" name="houses_person[person_id]" id="person_id" />
+  </div>
+  
+
+	<div class="actions">
+    <input type="submit" name="commit" value="Relation HP" />
+  </div>
+</form>
+
+<%= link_to 'Back', houses_people_path %>

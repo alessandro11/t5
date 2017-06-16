@@ -2,7 +2,7 @@
 
 <h1>Listing Professions</h1>
 
-<table>
+<table class="table">
   <thead>
     <tr>
       <th>Name</th>
@@ -17,7 +17,8 @@
       <tr>
         <td><%= profession.name %></td>
         <td><%= profession.place %></td>
-        <td><%= profession.person %></td>
+        <td><%= profession.person_id %></td>
+
         <td><%= link_to 'Show', profession %></td>
         <% if get_permission %>
           <td><%= link_to 'Edit', edit_profession_path(profession) %></td>

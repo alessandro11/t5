@@ -10,6 +10,8 @@ class ShoesController < ApplicationController
   # GET /shoes/1
   # GET /shoes/1.json
   def show
+    @person = Person.find_by(id: @shoe.person_id)
+    @person &&= @person[:first_name].to_s() + " " + @person[:last_name]
   end
 
   # GET /shoes/new

@@ -26,15 +26,16 @@ class HousesPeopleController < ApplicationController
   def create
     @houses_person = HousesPeople.new(houses_person_params)
 
-    respond_to do |format|
-      if @houses_person.save
-        format.html { redirect_to @houses_person, notice: 'Houses people was successfully created.' }
-        format.json { render :show, status: :created, location: @houses_person }
-      else
-        format.html { render :new }
-        format.json { render json: @houses_person.errors, status: :unprocessable_entity }
-      end
-    end
+    #respond_to do |format|
+      @houses_person.save
+        redirect_to new_houses_person_path
+        #format.html { redirect_to @houses_person, notice: 'Houses people was successfully created.' }
+        #format.json { render :show, status: :created, location: @houses_person }
+      #else
+        #format.html { render :new }
+        #format.json { render json: @houses_person.errors, status: :unprocessable_entity }
+      #end
+    #end
   end
 
   # PATCH/PUT /houses_people/1

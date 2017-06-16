@@ -44,6 +44,6 @@ class HousesPeopleControllerTest < ActionController::TestCase
       delete :destroy, id: @houses_person
     end
 
-    assert_redirected_to houses_people_index_path
+    assert_redirected_to houses_people_path
   end
 end

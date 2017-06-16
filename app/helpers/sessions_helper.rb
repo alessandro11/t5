@@ -14,7 +14,10 @@ module SessionsHelper
   end
 
   def get_permission
-    User.find_by(id: session[:user_id]).permission?
+		@permission = false
+		if logged_in?
+	    @permission = User.find_by(id: session[:user_id]).permission
+		end
   end
 
   def log_out

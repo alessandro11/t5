@@ -2,7 +2,7 @@
 
 <h1>Listing Shoes</h1>
 
-<table>
+<table class="table">
   <thead>
     <tr>
       <th>Brand</th>
@@ -17,7 +17,7 @@
       <tr>
         <td><%= shoe.brand %></td>
         <td><%= shoe.size %></td>
-        <td><%= shoe.person %></td>
+        <td><%= shoe.person_id %></td>
         <td><%= link_to 'Show', shoe %></td>
 
         <% if get_permission %>

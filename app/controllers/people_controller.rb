@@ -15,6 +15,7 @@ class PeopleController < ApplicationController
   # GET /people/new
   def new
     @person = Person.new
+    debugger
   end
 
   # GET /people/1/edit

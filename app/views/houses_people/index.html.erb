@@ -2,7 +2,7 @@
 
 <h1>Listing Houses People</h1>
 
-<table>
+<table class="table">
   <thead>
     <tr>
       <th>House</th>
@@ -14,8 +14,8 @@
   <tbody>
     <% @houses_people.each do |houses_person| %>
       <tr>
-        <td><%= houses_person.house %></td>
-        <td><%= houses_person.person %></td>
+        <td><%= houses_person.house_id %></td>
+        <td><%= houses_person.person_id %></td>
       </tr>
     <% end %>
   </tbody>

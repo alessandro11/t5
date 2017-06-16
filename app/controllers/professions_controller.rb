@@ -10,6 +10,8 @@ class ProfessionsController < ApplicationController
   # GET /professions/1
   # GET /professions/1.json
   def show
+    @person = Person.find_by(id: @profession.person_id)
+    @person &&= @person[:first_name].to_s() + " " + @person[:last_name]
   end
 
   # GET /professions/new
