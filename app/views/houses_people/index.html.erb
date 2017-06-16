@@ -21,6 +21,6 @@
   </tbody>
 </table>
 
-<br>
-
-<%= link_to 'New Houses people', new_houses_person_path %>
+<% if get_permission %>
+	<%= link_to 'New Houses people', new_houses_person_path %>
+<% end %>
