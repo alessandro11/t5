@@ -16,6 +16,7 @@
   <tbody>
     <% @people.each do |person| %>
       <tr>
+        <td><%= person.id %></td>
         <td><%= person.last_name %></td>
         <td><%= person.first_name %></td>
         <td><%= person.address %></td>
@@ -40,9 +41,9 @@
 
 <%= form_tag(professions_path, { :method => :get, :remote => true }) do %>
     <fieldset>
-        <legend>Procurar profissao</legend>
+        <legend>Search profession via AJAX</legend>
         <div class="field">
-            Nome:<br />
+            Person Id:<br />
             <%= text_field_tag :nome %>
         </div>
         <div class="actions">

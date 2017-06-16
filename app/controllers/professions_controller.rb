@@ -7,7 +7,6 @@ class ProfessionsController < ApplicationController
     if params[:nome].present?
       @professions = Profession.find_by_person_id(params[:nome])
       respond_to do |format|
-        format.html # index.html.erb
         format.js
       end      
     else
